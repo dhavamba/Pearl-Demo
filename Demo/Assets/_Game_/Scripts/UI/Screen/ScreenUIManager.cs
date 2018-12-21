@@ -5,10 +5,10 @@ using UnityEngine.U2D;
 using UnityEngine.UI;
 using it.amalfi.Pearl.events;
 using it.amalfi.Pearl;
-using it.twoLives.player;
+using it.demo.player;
 using System;
 
-namespace it.twoLives.UI
+namespace it.demo.UI
 {
     public class ScreenUIManager : LogicalManager<MessageScreeenUI>
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-namespace it.twoLives.power
+namespace it.demo.power
 {
     [Serializable]
     public struct PowerStruct

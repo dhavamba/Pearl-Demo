@@ -5,7 +5,7 @@ using it.amalfi.Pearl;
 
 namespace it.amalfi.Pearl.input
 {
-    public abstract class InputReaderManager : Singleton<InputReaderManager>
+    public abstract class InputReaderManager : MonoBehaviour
     {
         #region protected Fields
         protected StateInput stateInput;
@@ -43,14 +43,17 @@ namespace it.amalfi.Pearl.input
         #region Public methods
         public static void Add(ActionInput actionInput, IControllerReader reader)
         {
-            InputReaderManager obj = InputReaderManager.Instance;
-            Debug.Assert(reader != null && !obj.inputReaders.ContainsKey(actionInput));
-            obj.inputReaders.Update(actionInput, reader);
+            Debug.Assert(reader != null);
+            InputReaderManager obj = SingletonPool.Get<InputReaderManager>();
+            if (obj != null)
+                obj.inputReaders.Update(actionInput, reader);
         }
 
         public static void Remove(ActionInput actionInput)
         {
-            InputReaderManager.Instance.inputReaders.Remove(actionInput);
+            InputReaderManager obj = SingletonPool.Get<InputReaderManager>();
+            if(obj != null)
+                obj.inputReaders.Remove(actionInput);
         }
         #endregion
 

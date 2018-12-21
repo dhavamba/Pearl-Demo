@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 namespace it.amalfi.Pearl.audio
 {
-    public class AudioManager : Singleton<AudioManager>
+    public class AudioManager : MonoBehaviour
     {
         #region Inspector Fields
         [SerializeField]

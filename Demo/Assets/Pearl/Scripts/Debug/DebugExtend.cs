@@ -28,7 +28,7 @@ namespace it.amalfi.Pearl.debug
                 aux = GameObject.Instantiate<GameObject>(aux);
                 aux.name = "DebugUI";
             }
-            DebugBuild.Instance.Log(obj);
+            SingletonPool.Get<DebugBuild>().Log(obj);
         }
     }
 }

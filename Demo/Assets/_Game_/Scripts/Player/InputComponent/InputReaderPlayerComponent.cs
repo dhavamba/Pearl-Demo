@@ -2,7 +2,7 @@
 using it.amalfi.Pearl.events;
 using System;
 
-namespace it.twoLives.player
+namespace it.demo.player
 {
     public class InputReaderPlayerComponent : InputReaderComponent<MessagePlayerEnum>
     {
@@ -27,12 +27,9 @@ namespace it.twoLives.player
 
         public override void RemoveInput()
         {
-            if (InputReaderManager.Instance)
-            {
-                InputReaderManager.Remove(ActionInput.Attack);
-                InputReaderManager.Remove(ActionInput.Use);
-                InputReaderManager.Remove(ActionInput.Movement);
-            }
+            InputReaderManager.Remove(ActionInput.Attack);
+            InputReaderManager.Remove(ActionInput.Use);
+            InputReaderManager.Remove(ActionInput.Movement);
         }
     }
 }

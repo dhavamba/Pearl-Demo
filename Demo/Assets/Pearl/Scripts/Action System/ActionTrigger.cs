@@ -42,6 +42,7 @@ namespace it.amalfi.Pearl.actionTrigger
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
+            Debug.Log("er");
             auxGameObject = collider.gameObject;
             if (gameObject.HaveTags(Tags.Obstacle) && collider.isTrigger)
                 return;
@@ -70,9 +71,7 @@ namespace it.amalfi.Pearl.actionTrigger
         private void RemoveGameObjectActive(GameObject obj)
         {
             if (listGameobjectTriggeredActived.Contains(auxGameObject.GetInstanceID()))
-            {
                 listGameobjectTriggeredActived.Remove(auxGameObject.GetInstanceID());
-            }
         }
 
         private void TriggerEvent(GameObject obj)

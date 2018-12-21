@@ -6,9 +6,9 @@ using it.amalfi.Pearl.multitags;
 using it.amalfi.Pearl;
 using it.amalfi.Pearl.input;
 using static it.amalfi.Pearl.TupleExtend;
-using it.twoLives.power;
+using it.demo.power;
 
-namespace it.twoLives.player
+namespace it.demo.player
 {
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(SpriteRenderer))]
@@ -39,7 +39,8 @@ namespace it.twoLives.player
         #region Unity CallBacks
         protected override void OnAwake()
         {
-            ForceManagerSystem.Instance.AddManagerForce(gameObject.GetInstanceID(), GetComponent<Rigidbody2D>(), gameObject);
+            ForceManagerSystem forceManager = SingletonPool.Get<ForceManagerSystem>();
+            forceManager.AddManagerForce(gameObject.GetInstanceID(), GetComponent<Rigidbody2D>(), gameObject);
         }
 
         private void Start()

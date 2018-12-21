@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace it.amalfi.Pearl.debug
 {
-    public class DebugBuild : Singleton<DebugBuild>
+    public class DebugBuild : MonoBehaviour
     {
         private Text text;
         // Use this for initialization

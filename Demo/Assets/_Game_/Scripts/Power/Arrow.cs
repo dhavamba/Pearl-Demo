@@ -5,7 +5,7 @@ using it.amalfi.Pearl.actionTrigger;
 using it.amalfi.Pearl.multitags;
 using it.amalfi.Pearl;
 
-namespace it.twoLives.power
+namespace it.demo.power
 {
     public class Arrow : ComplexAction, IEvent
     {
@@ -15,29 +15,27 @@ namespace it.twoLives.power
 
         private void OnDisable()
         {
-            ForceManagerSystem.Instance.DisableForce(gameObject.GetInstanceID());
+            ForceManagerSystem forceManager = SingletonPool.Get<ForceManagerSystem>();
+            forceManager.DisableForce(gameObject.GetInstanceID());
         }
 
         public override void SetAction()
         {
+            ForceManagerSystem forceManager = SingletonPool.Get<ForceManagerSystem>();
             transform.rotation = QuaternionExtend.CalculateRotation2D(Take<Vector2>("direction"));
-            ForceManagerSystem.Instance.EnableForce(gameObject.GetInstanceID());
-            ForceManagerSystem.Instance.AddForce(gameObject.GetInstanceID(), "movement", Take<Vector2>("direction") * speed);
+            forceManager.EnableForce(gameObject.GetInstanceID());
+            forceManager.AddForce(gameObject.GetInstanceID(), "movement", Take<Vector2>("direction") * speed);
         }
 
         public void Trigger(Informations informations, List<Tags> tags)
-        {
-            Invoke("Destroy", timeForDestroy);
-        }
-
-        private void Destroy()
         {
             GameObjectExtend.Destroy(gameObject);
         }
 
         public override void SetAwake()
         {
-            ForceManagerSystem.Instance.AddManagerForce(gameObject.GetInstanceID(), GetComponent<Rigidbody2D>());
+            ForceManagerSystem forceManager = SingletonPool.Get<ForceManagerSystem>();
+            forceManager.AddManagerForce(gameObject.GetInstanceID(), GetComponent<Rigidbody2D>());
         }
     }
 }

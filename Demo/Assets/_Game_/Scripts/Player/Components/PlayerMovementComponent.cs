@@ -2,8 +2,9 @@
 using UnityEngine;
 using it.amalfi.Pearl.input;
 using it.amalfi.Pearl.events;
+using it.amalfi.Pearl;
 
-namespace it.twoLives.player
+namespace it.demo.player
 {
     public class PlayerMovementComponent : LogicalComponent<MessagePlayerEnum>
     {
@@ -40,7 +41,7 @@ namespace it.twoLives.player
         {
             CalculateDirection(valueInput);
             SendInformation(valueInput);
-            ForceManagerSystem.Instance.AddForce(ID, "movement", valueInput * speed);
+            SingletonPool.Get<ForceManagerSystem>().AddForce(ID, "movement", valueInput * speed);
 
         }
 

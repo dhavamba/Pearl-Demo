@@ -6,7 +6,7 @@ using it.amalfi.Pearl.level;
 using it.amalfi.Pearl;
 using it.amalfi.Pearl.UI;
 
-namespace it.twoLives.UI
+namespace it.demo.UI
 {
     public class UIConcretMenuManager : UISpecificMenuManager
     {
@@ -14,7 +14,7 @@ namespace it.twoLives.UI
         public void NewGame()
         {
             gameObject.SetActive(false);
-            GameManager.Instance.StartGame(LevelEnum.Level);
+            SingletonPool.Get<GameManager>().StartGame(LevelEnum.Level);
         }
         #endregion
 

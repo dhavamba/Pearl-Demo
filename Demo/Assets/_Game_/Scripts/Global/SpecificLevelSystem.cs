@@ -4,7 +4,7 @@ using UnityEngine;
 using it.amalfi.Pearl.level;
 using it.amalfi.Pearl;
 
-namespace it.twoLives
+namespace it.demo
 {
     public class SpecificLevelSystem : LevelSystem
     {

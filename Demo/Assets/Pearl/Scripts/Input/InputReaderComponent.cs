@@ -12,8 +12,7 @@ namespace it.amalfi.Pearl.input
 
         public override void OnDestroy()
         {
-            if (InputReaderManager.Instance)
-                RemoveInput();
+            RemoveInput();
         }
 
         public abstract void ReadInput(ActionInput actionInput, params object[] valueInput);

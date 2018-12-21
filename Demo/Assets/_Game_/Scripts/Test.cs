@@ -5,13 +5,16 @@ using System;
 using it.amalfi.Pearl.actionTrigger;
 using it.amalfi.Pearl.multitags;
 
-public class Test : MonoBehaviour, IEvent
+namespace it.demo.test
 {
-    public void Trigger(Informations informations, List<Tags> tags)
+    public class Test : MonoBehaviour, IEvent
     {
-        if (tags.Contains(Tags.Attack))
-            Debug.Log("sono stato colpito, ho preso " + informations.Take<byte>("damage") + " di danno");
-        if (tags.Contains(Tags.Use))
-            Debug.Log("sono stato colpito usato");
+        public void Trigger(Informations informations, List<Tags> tags)
+        {
+            if (tags.Contains(Tags.Attack))
+                Debug.Log("I was hit, I took " + informations.Take<byte>("damage") + " of damage");
+            if (tags.Contains(Tags.Use))
+                Debug.Log("I have been used");
+        }
     }
 }

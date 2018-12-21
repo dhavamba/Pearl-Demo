@@ -4,10 +4,11 @@ using UnityEngine.UI;
 using System;
 using it.amalfi.Pearl.level;
 using it.amalfi.Pearl;
+using it.demo.player;
 
-namespace it.twoLives
+namespace it.demo
 {
-    public class GameManager : Singleton<GameManager>
+    public class GameManager : MonoBehaviour
     {
         #region Inspector Fields
         [SerializeField]

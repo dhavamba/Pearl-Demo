@@ -4,8 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using it.amalfi.Pearl;
 
-namespace it.twoLives.UI
+namespace it.demo.UI
 {
     public class UISpecificMenuManager : UIMenuManager
     {
@@ -23,13 +24,15 @@ namespace it.twoLives.UI
         #region Public Methods
         public void ChangeSlide(string nameSlider)
         {
-            AudioManager.Instance.SetVolume(nameSlider, sliders[nameSlider].value);
+            AudioManager audioManager = SingletonPool.Get<AudioManager>();
+            audioManager.SetVolume(nameSlider, sliders[nameSlider].value);
         }
         #endregion
 
         #region Private Methods
         private void SetMusicSlider()
         {
+            AudioManager audioManager = SingletonPool.Get<AudioManager>();
             Transform parent = transform.Find("OptionsPanel/");
             sliders = new Dictionary<string, Slider>
             {
@@ -37,8 +40,8 @@ namespace it.twoLives.UI
                 { "soundEffectVolume", parent.Find("SliderEffects").GetComponent<Slider>() }
             };
 
-            sliders["musicVolume"].value = AudioManager.Instance.GetMusicVolume();
-            sliders["soundEffectVolume"].value = AudioManager.Instance.GetSoundEffectVolume();
+            sliders["musicVolume"].value = audioManager.GetMusicVolume();
+            sliders["soundEffectVolume"].value = audioManager.GetSoundEffectVolume();
         }
         #endregion
     }

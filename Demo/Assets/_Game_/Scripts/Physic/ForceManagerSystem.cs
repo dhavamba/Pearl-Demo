@@ -4,9 +4,9 @@ using UnityEngine;
 using it.amalfi.Pearl;
 using it.amalfi.Pearl.events;
 
-namespace it.twoLives
+namespace it.demo
 {
-    public class ForceManagerSystem : Singleton<ForceManagerSystem>
+    public class ForceManagerSystem : MonoBehaviour
     {
         #region Private Fields
         private Dictionary<int, ForceManager> forcesManager = new Dictionary<int, ForceManager>();

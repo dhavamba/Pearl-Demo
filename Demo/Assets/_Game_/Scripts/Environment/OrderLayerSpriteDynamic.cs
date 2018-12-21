@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace it.twoLives.graphic
+namespace it.demo.graphic
 {
     public class OrderLayerSpriteDynamic : OrderLayerSpriteStatic
     {

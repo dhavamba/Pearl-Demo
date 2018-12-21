@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using it.amalfi.Pearl;
 
-namespace it.twoLives
+namespace it.demo
 {
     public class ForceManager
     {

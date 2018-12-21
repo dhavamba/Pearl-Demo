@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace it.twoLives.player
+namespace it.demo.player
 {
     public enum MessagePlayerEnum
     {

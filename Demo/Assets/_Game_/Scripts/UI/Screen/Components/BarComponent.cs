@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using it.amalfi.Pearl.events;
 using UnityEngine;
 
-namespace it.twoLives.UI
+namespace it.demo.UI
 {
     public class BarComponent : LogicalComponent<MessageScreeenUI>
     {

@@ -6,7 +6,7 @@ using it.amalfi.Pearl.events;
 using it.amalfi.Pearl.input;
 using it.amalfi.Pearl;
 
-namespace it.twoLives.player
+namespace it.demo.player
 {
     public class PlayerStatsComponent : LogicalComponent<MessagePlayerEnum>
     {

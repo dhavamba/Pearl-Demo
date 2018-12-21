@@ -5,9 +5,9 @@ using System;
 using it.amalfi.Pearl.actionTrigger;
 using it.amalfi.Pearl.events;
 using it.amalfi.Pearl.input;
-using it.twoLives.power;
+using it.demo.power;
 
-namespace it.twoLives.player
+namespace it.demo.player
 {
     public class PlayerPowerComponent : LogicalComponent<MessagePlayerEnum>
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace it.twoLives
+namespace it.demo
 {
     public class ForceManagerPlayer : ForceManager
     {

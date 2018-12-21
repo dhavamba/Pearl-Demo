@@ -4,7 +4,7 @@ using UnityEngine;
 using it.amalfi.Pearl.multitags;
 using it.amalfi.Pearl;
 
-namespace it.twoLives.power
+namespace it.demo.power
 {
     public static class Power
     {

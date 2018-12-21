@@ -4,7 +4,7 @@ using it.amalfi.Pearl.events;
 using System.Collections.Generic;
 using System;
 
-namespace it.twoLives.camera
+namespace it.demo.camera
 {
     public class CameraManager : LogicalSimpleManager
     {

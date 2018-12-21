@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace it.twoLives.UI
+namespace it.demo.UI
 {
     [RequireComponent(typeof(RectTransform))]
     public class Bar : MonoBehaviour
